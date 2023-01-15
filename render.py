@@ -1,5 +1,6 @@
 # render.py
-# A terribly simple static CMS for tnwc
+# A terribly simple static CMS for tnwc.
+# I need to make a README for this...
 
 import json
 import os
@@ -10,7 +11,7 @@ import sys
 TMPL_FILE = "template.html" # base 'theme' for all pages
 SB_FILE = "sidebar.html" # for building navigation
 DESC = "The New Web Collective." # for meta tags
-URL = "https://tnwcollective.github.io/" # for absolute paths
+URL = "https://tnwcollective.github.io" # for absolute paths
 
 failures = 0 # count issues
 
@@ -41,7 +42,7 @@ def indent(string, n):
 def render(src_path, dest_path, meta_props):
     global failures
 
-    tmpl_file = open(TMPL_FILE, "r", encoding="utf-8")
+    tmpl_file = open(TMPL_FILE, "r", encoding = "utf-8")
     tmpl = tmpl_file.read()
     tmpl_file.close()
 
@@ -60,14 +61,14 @@ def render(src_path, dest_path, meta_props):
         print("  ! no source header")
         return
 
-    out = tmpl.replace("$CONTENT", indent(src, 2))
+    out = tmpl.replace("$CONTENT", indent(src, 4))
     out = out.replace("$TITLE", title)
 
     if os.path.exists(SB_FILE) == True:
         sidebar_file = open(SB_FILE, "r", encoding="utf-8")
         sidebar = sidebar_file.read()
         sidebar_file.close()
-        out = out.replace("$SIDEBAR", indent(sidebar, 2))
+        out = out.replace("$SIDEBAR", indent(sidebar, 5))
     else:
         print("  * no sidebar")
 
@@ -78,15 +79,16 @@ def render(src_path, dest_path, meta_props):
 
     out = out.replace("$URL", URL) # done last so we can write to the sidebar
 
-    out_file = open(dest_path, "w", encoding="utf-8")
+    out_file = open(dest_path, "w", encoding = "utf-8")
     out_file.write(out)
     out_file.close()
 
 check_env()
 
+# Make the URL your local path for testing
 if len(sys.argv) == 2 and sys.argv[1] == "-l":
     print("(I'm building locally...)")
-    URL = ""
+    URL = __file__.replace("\\", "/")
 
 list_file = open("files.json", "r")
 list_data = json.load(list_file)

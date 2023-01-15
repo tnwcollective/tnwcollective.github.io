@@ -2,23 +2,51 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#5f00c4">
+	
+	<link rel="stylesheet" type="text/css" href="reset.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	
 	<title>$TITLE</title>
-
-    <meta property="og:type" content="website">
-	<meta property="og:title" content="$TITLE">
+    <meta property="og:title" content="$TITLE">
     <meta name="twitter:title" content="$TITLE">
+    <meta property="og:type" content="website">
 	<meta name="description" content="$DESC">
-	<meta property="og:description" content="$DESC">
+    <meta property="og:description" content="$DESC">
     <meta name="twitter:description" content="$DESC">
+
+	<script type="text/javascript">
+		function toggleMenu() {
+			var links = document.getElementById("links");
+			if (links.style.display == "block") {
+				links.style.display = "none"
+			} else { links.style.display = "block"; }
+		}
+	</script>
 </head>
 
-    <body lang="en">
-        <code>URL: $URL</code>
-        $CONTENT
-        <hr />
-        <h2>Navigation</h2>
-        $SIDEBAR
-    </body>
+<body lang="en">
+	<img class="instant" src="assets/header.jpg"/>
+	<div class="container">
+		<div class="grid-wrapper">
+			<div class="sidebar">
+				<a href="$URL">
+					<img src="assets/title.svg" class="title"/>
+				</a>
+				<div id="nav-button" class="emphasis" onclick="toggleMenu();">
+					<p>Navigation</p>
+				</div>
+				<div id="links" class="links">
+					$SIDEBAR
+				</div>
+			</div>
+			<div class="content">
+				$CONTENT
+			</div>
+		</div>
+	</div>
+</body>
 </html>
