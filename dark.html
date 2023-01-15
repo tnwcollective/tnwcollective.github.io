@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#5f00c4">
+	
+	<link rel="stylesheet" type="text/css" href="reset.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	
+	<title>Dark Mode</title>
+    <meta property="og:title" content="Dark Mode">
+    <meta name="twitter:title" content="Dark Mode">
+    <meta property="og:type" content="website">
+	<meta name="description" content="Dark mode testing!">
+    <meta property="og:description" content="Dark mode testing!">
+    <meta name="twitter:description" content="Dark mode testing!">
+
+	<script type="text/javascript">
+		function toggleMenu() {
+			var links = document.getElementById("links");
+			if (links.style.display == "block") {
+				links.style.display = "none"
+			} else { links.style.display = "block"; }
+		}
+	</script>
+</head>
+
+<body lang="en">
+	<img class="instant" src="assets/header.jpg"/>
+	<div class="container">
+		<div class="grid-wrapper">
+			<div class="sidebar">
+				<a href="https://tnwcollective.github.io">
+					<img src="assets/title.svg" class="title"/>
+				</a>
+				<div id="nav-button" class="emphasis" onclick="toggleMenu();">
+					<p>Navigation</p>
+				</div>
+				<div id="links" class="links">
+					<ul>
+					    <li><a href="https://tnwcollective.github.io/test.html">Test</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="content">
+				<!--Dark Mode-->
+				<script type="text/javascript">
+				    var root = document.head;
+				    var darkMod = document.createElement("link");
+				    darkMod.type = "text/css";
+				    darkMod.rel = "stylesheet";
+				    darkMod.href = "dark.css";
+				    root.appendChild(darkMod);
+				</script>
+				<p>This is some <a href="#">content</a>!</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

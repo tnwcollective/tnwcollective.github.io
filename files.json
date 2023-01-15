@@ -3,5 +3,10 @@
         "src": "src/test.html",
         "dest": "test.html",
         "desc": "A test page to feed render.py."
+    },
+    {
+        "src": "src/dark.html",
+        "dest": "dark.html",
+        "desc": "Dark mode testing!"
     }
 ]
