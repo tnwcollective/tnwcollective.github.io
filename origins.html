@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="https://tnwcollective.github.io/assets/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#5f00c4">
+	
+	<link rel="stylesheet" type="text/css" href="reset.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	
+	<title>First Steps for the New Web Collective</title>
+    <meta property="og:title" content="First Steps for the New Web Collective">
+    <meta name="twitter:title" content="First Steps for the New Web Collective">
+    <meta property="og:type" content="website">
+	<meta name="description" content="A summary of the first conversations about the New Web Collective.">
+    <meta property="og:description" content="A summary of the first conversations about the New Web Collective.">
+    <meta name="twitter:description" content="A summary of the first conversations about the New Web Collective.">
+
+	<script type="text/javascript">
+		var root;
+		var darkMod;
+		var title;
+		var darkButton;
+
+		var darkState = false;
+
+		function initialise() {
+			root = document.head;
+			title = document.getElementById("title");
+			darkButton = document.getElementById("dark-button");
+
+			darkMod = document.createElement("link");
+			darkMod.type = "text/css";
+			darkMod.rel = "stylesheet";
+			darkMod.href = "dark.css";
+
+			if (sessionStorage.getItem("dark") == "true") {
+				dark(true); }
+		}
+
+		function toggleMenu() {
+			var links = document.getElementById("links");
+			if (links.style.display == "block") {
+				links.style.display = "none";
+			} else { links.style.display = "block"; }
+		}
+
+		function dark(state) {
+			darkState = state;
+			if (state == true) {
+				root.appendChild(darkMod);
+				title.src = "assets/title-dark.svg";
+				darkButton.src = "assets/moon-dark.svg";
+				sessionStorage.setItem("dark", "true");
+			} else {
+				root.removeChild(darkMod);
+				title.src = "assets/title.svg";
+				darkButton.src = "assets/moon.svg";
+				sessionStorage.setItem("dark", "false");
+			}
+		}
+
+		function toggleDark() {
+			if (darkState == true) {
+				dark(false);
+			} else { dark(true); }
+		}
+	</script>
+</head>
+
+<body lang="en" onload="initialise()">
+	<img class="instant" src="assets/header.jpg"/>
+	<div class="container">
+		<div class="grid-wrapper">
+			<div class="sidebar">
+				<a href="https://tnwcollective.github.io"><img src="assets/title.svg" id="title"/></a>
+				<a onclick="toggleDark();">
+					<img id="dark-button" src="assets/moon.svg"/>
+				</a>
+				<div style="clear: both;">&nbsp;</div>
+				<div id="nav-button" class="emphasis button" onclick="toggleMenu();">
+					<p>Navigation</p>
+				</div>
+				<div id="links">
+					<ul>
+					    <li><a href="index.html">Home</a></li>
+					    <li><a href="origins.html">First Steps</a></li>
+					    <li><a href="style.html">Style Guide</a></li>
+					</ul>
+					<ul>
+					    <li><a href="manidev.html">Manifesto Scrapbook</a></li>
+					</ul>
+					<div class="emphasis"><p style="font-size: 9pt;">This is a collective record! If there is anything that doesn&rsquo;t look right, or you spot structural and textual improvements that could be made, please don&rsquo;t hesistate to contact me at <nobr>slyllama#0007</nobr> &ndash; I&rsquo;d love for us to work on this together.</p></div>
+				</div>
+			</div>
+			<div class="content">
+				<!--First Steps for the New Web Collective-->
+				<h2>First Steps for the New Web Collective</h2>
+				<div class="emphasis" style="margin-bottom: 20px; border: none; background: #5f00c4; color: white;"><p>(10.01.23) <a style="color: white;" href="https://yesterweb.org/" target="_tab">Yesterweb</a> staff recently made an important announcement about the future of the YW Discord server, something which is relevant to the NWC&rsquo;s origins and mission. They have authored a very insightful <a style="color: white;" href="https://forum.yesterweb.org/viewtopic.php?t=155"> forum thread</a> about it.</p></div>
+				<p>After bunny started a thread about the future of the Yesterweb (3.1.22), the conversation ended up moving along pretty swiftly, and a number of valuable ideas and jumping-off points were developed before the creation of the NWC server itself, so we thought it might be useful to summarise the key points of that original thread.</p>
+				<h3>Convergence and Continuity</h3>
+				<p>The discussion began with the issues accruing around the Discord server arm of the Yesterweb (YW) &ndash; some of which are perhaps endemic to any larger open community. A mission like that of the YW depends on <b>convergence</b> (focusing in on ideas by actively moderating their scope) and <b>continuity</b> (evolving and communicating concepts in ways only possible through the retention of invested participants); but the size, complexity, and centralisation of the server appears to resist both.</p>
+								
+				<p>Proliferating conversations with no real thesis indefatiguably knock the system out of orbit, and the &ldquo;weight&rdquo; of this directionless motion puts undue stress on moderators. Community moderation and intervention also becomes difficult as a large population gives discussions an inertia (and an audience) that makes the prospect of intervention prickly. Thematic issues around the &ldquo;Yesterweb&rdquo; brand and name were also touched upon (i.e., &ldquo;is an excessive engagement in non-critical nostalgia catalysed by how the community is labeled and branded?&rdquo;) &ndash; but that&rsquo;s probably a conversation for another record.</p>
+				<p>The notion of a centralised server was concluded, at the end of the day, to be a non-starter. Alternatives need to be sought: not just a new space, but a new typology.</p>
+				<h3>Transitory Space</h3>
+				<p>A simple but provocative concept began to circulate again and again: the &ldquo;train station&rdquo; or &ldquo;cellular structure&rdquo;. If the YW is too centralised, then decentralisation makes sense as a course correction &ndash; and it is, of course, congruent with the ethos of the YW at a more fundamental level. Under this typology the YW would function as a station or <b>lobby</b> &ndash; it&rsquo;s comfortable there, but mustn&rsquo;t grow into a nest of <b>complacency</b>. People come in, become familiar with the way the tracks are laid out and how the system works, find their train, and depart to settle in their group. These groups are distinct but networked by the YW &ndash; and, perhaps more importantly, by the ethos which drives them all. For this reason it was apparent that a strong manifesto would need to be crafted, one capable of gluing these decentralised cells together, and so began The NWC server.</p>
+				<p style="text-align: center;"><br/>* * *</p>
+				<h3>Related</h3>
+				<p>(Mainly for the writer&rsquo;s benefit, because he can&rsquo;t keep anything straight in his head&hellip;)</p>
+				<p><a href="https://forum.yesterweb.org/viewtopic.php?t=146">Community Structure and Subdivision &ndash; bunny (YW Forum)</a></p>
+				<blockquote>
+					<p>You could even think of YW as a sort of ideological &ldquo;standard&rdquo;, that collectives can attribute their name to while not getting bogged down in the community management of thousands of people with different lives, ideals, and desires from the wider YW space. &ndash; bunny</p>
+				</blockquote>
+				<p>I think the back-and-forth over the value (and especially the <b>sustainability</b>) of decentralised and anarchist spaces is an important discussion to pay attention to and think about. amethyst&rsquo;s comment, &ldquo;how can we fracture in a way that best allows us to form a unified front when necessary?&rdquo; sums this question up well. I was surprised to find out how closely the path these posts took continued to mirror the points made in the thread described above; I think that reinforcement is well worth keeping in mind.</p>
+				<blockquote>
+					<p>Refocusing what the Discord should be, a place where people show up, learn more, and start creating themselves, is definitely what should happen. &ndash; jshtab</p>
+				</blockquote>
+				<p style="text-align: center;"><br/>* * *</p>
+				<p><br/>Other topics discussed: alternatives to Discord like xmpp, and ideas around bridging various communication outlets; having minors participate in the YW; the need to streamline conversation and partition topics (this was assuming a retention of the current server).</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

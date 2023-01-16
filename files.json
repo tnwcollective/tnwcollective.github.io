@@ -1,12 +1,23 @@
 [
     {
-        "src": "src/test.html",
-        "dest": "test.html",
-        "desc": "A test page to feed render.py."
+        "src": "src/origins.html",
+        "dest": "origins.html",
+        "desc": "A summary of the first conversations about the New Web Collective."
     },
     {
-        "src": "src/dark.html",
-        "dest": "dark.html",
-        "desc": "Dark mode testing!"
+        "src": "src/style.html",
+        "dest": "style.html",
+        "desc": "A loose style guide for the New Web Collective."
+    }
+    ,
+    {
+        "src": "src/index.html",
+        "dest": "index.html",
+        "desc": "Just a notebook for the New Web Collective."
+    },
+    {
+        "src": "src/manidev.html",
+        "dest": "manidev.html",
+        "desc": "Developing a manifesto for the New Web Collective."
     }
 ]

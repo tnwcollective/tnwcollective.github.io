@@ -1,6 +1,6 @@
 # The New Web Collective
 
-![Cover image](hero.jpg)
+![Cover image](img/hero-doc.jpg)
 
 ## The Content Renderer
 

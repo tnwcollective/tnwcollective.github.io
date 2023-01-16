@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="https://tnwcollective.github.io/assets/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#5f00c4">
+	
+	<link rel="stylesheet" type="text/css" href="reset.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	
+	<title>Manifesto Scrapbook</title>
+    <meta property="og:title" content="Manifesto Scrapbook">
+    <meta name="twitter:title" content="Manifesto Scrapbook">
+    <meta property="og:type" content="website">
+	<meta name="description" content="Developing a manifesto for the New Web Collective.">
+    <meta property="og:description" content="Developing a manifesto for the New Web Collective.">
+    <meta name="twitter:description" content="Developing a manifesto for the New Web Collective.">
+
+	<script type="text/javascript">
+		var root;
+		var darkMod;
+		var title;
+		var darkButton;
+
+		var darkState = false;
+
+		function initialise() {
+			root = document.head;
+			title = document.getElementById("title");
+			darkButton = document.getElementById("dark-button");
+
+			darkMod = document.createElement("link");
+			darkMod.type = "text/css";
+			darkMod.rel = "stylesheet";
+			darkMod.href = "dark.css";
+
+			if (sessionStorage.getItem("dark") == "true") {
+				dark(true); }
+		}
+
+		function toggleMenu() {
+			var links = document.getElementById("links");
+			if (links.style.display == "block") {
+				links.style.display = "none";
+			} else { links.style.display = "block"; }
+		}
+
+		function dark(state) {
+			darkState = state;
+			if (state == true) {
+				root.appendChild(darkMod);
+				title.src = "assets/title-dark.svg";
+				darkButton.src = "assets/moon-dark.svg";
+				sessionStorage.setItem("dark", "true");
+			} else {
+				root.removeChild(darkMod);
+				title.src = "assets/title.svg";
+				darkButton.src = "assets/moon.svg";
+				sessionStorage.setItem("dark", "false");
+			}
+		}
+
+		function toggleDark() {
+			if (darkState == true) {
+				dark(false);
+			} else { dark(true); }
+		}
+	</script>
+</head>
+
+<body lang="en" onload="initialise()">
+	<img class="instant" src="assets/header.jpg"/>
+	<div class="container">
+		<div class="grid-wrapper">
+			<div class="sidebar">
+				<a href="https://tnwcollective.github.io"><img src="assets/title.svg" id="title"/></a>
+				<a onclick="toggleDark();">
+					<img id="dark-button" src="assets/moon.svg"/>
+				</a>
+				<div style="clear: both;">&nbsp;</div>
+				<div id="nav-button" class="emphasis button" onclick="toggleMenu();">
+					<p>Navigation</p>
+				</div>
+				<div id="links">
+					<ul>
+					    <li><a href="index.html">Home</a></li>
+					    <li><a href="origins.html">First Steps</a></li>
+					    <li><a href="style.html">Style Guide</a></li>
+					</ul>
+					<ul>
+					    <li><a href="manidev.html">Manifesto Scrapbook</a></li>
+					</ul>
+					<div class="emphasis"><p style="font-size: 9pt;">This is a collective record! If there is anything that doesn&rsquo;t look right, or you spot structural and textual improvements that could be made, please don&rsquo;t hesistate to contact me at <nobr>slyllama#0007</nobr> &ndash; I&rsquo;d love for us to work on this together.</p></div>
+				</div>
+			</div>
+			<div class="content">
+				<!--Manifesto Scrapbook-->
+				<h2>Manifesto Scrapbook</h2>
+				<img src="img/archigram.jpg" class="cimg" style="width: 100%;"/>
+				<p class="smol" style="margin-bottom: 35px;"><a href="https://www.e-architect.com/hong-kong/m-archigram-cities-symposium">Archigram&rsquo;s Walking Cities (1964)</a>, a mirror of the NWC&rsquo;s <a href="origins.html">concept</a> of a networked cellular structure. Just thought it would be appropriate to start off with that, eheh&hellip;</p>
+				<p>There have been many great conversations around the crafting of a manifesto for the NWC, both on the server and on the <a href="https://pad.riseup.net/p/TNWC" target="_tab">etherpad</a>. While it&rsquo;s best to go straight to those sources, I thought I&rsquo;d also make a quick note of the key themes and values that seem to be re-emerging. (The A&rsquo;s and B&rsquo;s line up roughly &ndash; but not entirely &ndash; with the sections in the etherpad document.)<br />&nbsp;</p>
+				<div class="emphasis"><p>This is only a scrapbook! Not a draft or anything canonically representative of the final manifesto. All errors are mine.</p></div>
+				<h3>1. Freedom and Radicalism</h3>
+				<p>(A) The New Web is free &ndash; in the many senses of the word. Financially free, free from the race for artificial expansion, and <a href="https://www.gnu.org/philosophy/free-sw.en.html#four-freedoms">free</a> for study, adaptation, and organic growth. Value is social and emotional, not monetary.</p>
+				<h3>2. Decentralised Self-Custody</h3>
+				<p>(A) One should be encouraged to take custody over their presence on the web by self-hosting their content. I think it should be acknowledged, however, that this takes learning and commitment, so I think that (5) plays strongly into this principle.</p>
+				<h3>3. Resilience and Intentionality</h3>
+				<p>(B) <a href="https://permacomputing.net/">Permacomputing</a> (which I hadn&rsquo;t heard of before; thanks, owocean) encompasses a sphere of values which discuss an attitude of longevity, lightness, recycling, resilience, and so on. There is a lot to delve into here, things probably worth writing and thinking  on [<a href="#1">1</a>]. To me it appears to relate to thoughtful and intentional online practice/praxis also discussed. Care, intentionality, and space (i.e., logging off sometimes!) is going to help cultivate a permaculture-culture.</p>
+				<h3>4. Collectivism and Consensus</h3>
+				<p>(B) It was brought up on the etherpad, but this has been a core part of the NWC since its beginning; it will be important to maintain these principles of discussion and agreement.</p>
+				<h3>5. Education and Service Provision</h3>
+				<p>(B) It&rsquo;s been heartening to see a strong ethos of educating and volunteering develop. This output emerges in the form of writing on radical outreach, social philosophy, and the infrastructure proper which seeks to encourage and shepherd those values. In my view the NWC, with its diversity of members, is well-poised to tackle these outcomes.</p>
+				<p style="text-align: center;"><br/>* * *<br/></p>
+				<h3>Footnotes</h3>
+				<img class="cimg" src="img/dmax.jpg"/>
+				<p class="smol"><a href="https://www.moma.org/collection/works/804">A Minimum Dynamaxion Home Project</a> &ndash; R. Buckminster Fuller (1927).</p>
+				<ol class="footnotes">
+				    <li id="1">Nerd note: Fuller once asked: <a href="https://www.moma.org/collection/works/804">&ldquo;how much does your house weigh&rdquo;?</a> I think the oddball views described in this way i.e., in <a href="https://us.macmillan.com/books/9780312174910/criticalpath">Critical Path</a> could have some value for the NWC.</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

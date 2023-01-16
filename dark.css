@@ -18,7 +18,14 @@ body {
     background: #333332;
 }
 
-.button {
+.cimg {
+    border-bottom: 3px solid #d7c7ff;
+    border-left: 1px solid #d7c7ff;
+    border-right: 3px solid #d7c7ff;
+    border-top: 1px solid #d7c7ff;
+}
+
+.emphasis {
     background: #2a2a2a;
     border-bottom: 3px solid #d7c7ff;
     border-left: 1px solid #d7c7ff;
