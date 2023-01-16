@@ -22,12 +22,14 @@
 		var root;
 		var darkMod;
 		var title;
+		var darkButton;
 
 		var darkState = false;
 
 		function initialise() {
 			root = document.head;
-			title = document.getElementById("title")
+			title = document.getElementById("title");
+			darkButton = document.getElementById("dark-button");
 
 			darkMod = document.createElement("link");
 			darkMod.type = "text/css";
@@ -38,7 +40,7 @@
 		function toggleMenu() {
 			var links = document.getElementById("links");
 			if (links.style.display == "block") {
-				links.style.display = "none"
+				links.style.display = "none";
 			} else { links.style.display = "block"; }
 		}
 
@@ -47,16 +49,18 @@
 			if (state == true) {
 				root.appendChild(darkMod);
 				title.src = "assets/title-dark.svg";
+				darkButton.src = "assets/moon-dark.svg";
 			} else {
 				root.removeChild(darkMod);
 				title.src = "assets/title.svg";
+				darkButton.src = "assets/moon.svg";
 			}
 		}
 
 		function toggleDark() {
 			if (darkState == true) {
-				dark(false)
-			} else { dark(true) }
+				dark(false);
+			} else { dark(true); }
 		}
 	</script>
 </head>
@@ -66,9 +70,11 @@
 	<div class="container">
 		<div class="grid-wrapper">
 			<div class="sidebar">
-				<a href="$URL">
-					<img src="assets/title.svg" id="title"/>
+				<a href="$URL"><img src="assets/title.svg" id="title"/></a>
+				<a onclick="toggleDark();">
+					<img id="dark-button" src="assets/moon.svg"/>
 				</a>
+				<div style="clear: both;">&nbsp;</div>
 				<div id="nav-button" class="emphasis button" onclick="toggleMenu();">
 					<p>Navigation</p>
 				</div>
@@ -77,6 +83,7 @@
 				</div>
 			</div>
 			<div class="content">
+				
 				$CONTENT
 			</div>
 		</div>

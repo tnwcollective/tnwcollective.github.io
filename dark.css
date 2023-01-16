@@ -29,3 +29,9 @@ body {
 .sidebar {
     border-right: 1px solid #d7c7ff;
 }
+
+@media only screen and (max-width: 600px) {
+    .sidebar {
+        border: none;
+    }
+}

@@ -92,6 +92,18 @@ ul {
     width: 800px;
 }
 
+#dark-button {
+    cursor: pointer;
+    float: right;
+    opacity: 0.5;
+    transition: 0.1s;
+    width: 24px;
+}
+
+#dark-button:hover {
+    opacity: 1.0;
+}
+
 .emphasis {
     background: white;
     border-bottom: 3px solid #222;
