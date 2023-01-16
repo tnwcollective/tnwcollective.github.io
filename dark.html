@@ -19,27 +19,60 @@
     <meta name="twitter:description" content="Dark mode testing!">
 
 	<script type="text/javascript">
+		var root;
+		var darkMod;
+		var title;
+
+		var darkState = false;
+
+		function initialise() {
+			root = document.head;
+			title = document.getElementById("title")
+
+			darkMod = document.createElement("link");
+			darkMod.type = "text/css";
+			darkMod.rel = "stylesheet";
+			darkMod.href = "dark.css";
+		}
+
 		function toggleMenu() {
 			var links = document.getElementById("links");
 			if (links.style.display == "block") {
 				links.style.display = "none"
 			} else { links.style.display = "block"; }
 		}
+
+		function dark(state) {
+			darkState = state;
+			if (state == true) {
+				root.appendChild(darkMod);
+				title.src = "assets/title-dark.svg";
+			} else {
+				root.removeChild(darkMod);
+				title.src = "assets/title.svg";
+			}
+		}
+
+		function toggleDark() {
+			if (darkState == true) {
+				dark(false)
+			} else { dark(true) }
+		}
 	</script>
 </head>
 
-<body lang="en">
+<body lang="en" onload="initialise()">
 	<img class="instant" src="assets/header.jpg"/>
 	<div class="container">
 		<div class="grid-wrapper">
 			<div class="sidebar">
 				<a href="https://tnwcollective.github.io">
-					<img src="assets/title.svg" class="title"/>
+					<img src="assets/title.svg" id="title"/>
 				</a>
-				<div id="nav-button" class="emphasis" onclick="toggleMenu();">
+				<div id="nav-button" class="emphasis button" onclick="toggleMenu();">
 					<p>Navigation</p>
 				</div>
-				<div id="links" class="links">
+				<div id="links">
 					<ul>
 					    <li><a href="https://tnwcollective.github.io/test.html">Test</a></li>
 					</ul>
@@ -47,15 +80,14 @@
 			</div>
 			<div class="content">
 				<!--Dark Mode-->
-				<script type="text/javascript">
-				    var root = document.head;
-				    var darkMod = document.createElement("link");
-				    darkMod.type = "text/css";
-				    darkMod.rel = "stylesheet";
-				    darkMod.href = "dark.css";
-				    root.appendChild(darkMod);
-				</script>
+				<h2>Dark Mode</h2>
 				<p>This is some <a href="#">content</a>!</p>
+				<blockquote>
+				    <p>More stuff; here&rsquo;s some <code>code, too</code>.</p>
+				</blockquote>
+				<div class="emphasis button" onclick="toggleDark();">
+				    <p>Toggle Theme</p>
+				</div>
 			</div>
 		</div>
 	</div>

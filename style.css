@@ -121,23 +121,26 @@ ul {
     width: 100%;
 }
 
-.links {
+#links {
     display: block;
     margin-top: 20px;
 }
 
 #nav-button {
-    cursor: pointer;
     display: none;
+}
+
+.button {
+    cursor: pointer;
     margin-top: 10px;
     padding: 7px 0;
 }
 
-#nav-button>* {
+.button>* {
     text-align: center;
 }
 
-#nav-button:hover {
+.button:hover {
     background: #222;
     color: #FFF !important;
 }
@@ -161,7 +164,7 @@ ul {
     font-size: 9pt;
 }
 
-.title {
+#title {
     display: block;
     margin: 0 auto;
     width: 100%;

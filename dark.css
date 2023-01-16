@@ -1,8 +1,31 @@
-a {
-    color: #D7C7FF;
+a, blockquote>p, body, .button, h2, h3 {
+    color: #d7c7ff;
+}
+
+h2 {
+    border-right: 3px solid #d7c7ff;
+}
+
+p {
+    color: #ededed;
+}
+
+blockquote {
+    border-left: 1px solid #d7c7ff;
 }
 
 body {
     background: #333332;
-    color: #EDEDED;
+}
+
+.button {
+    background: #2a2a2a;
+    border-bottom: 3px solid #d7c7ff;
+    border-left: 1px solid #d7c7ff;
+    border-right: 3px solid #d7c7ff;
+    border-top: 1px solid #d7c7ff;
+}
+
+.sidebar {
+    border-right: 1px solid #d7c7ff;
 }
