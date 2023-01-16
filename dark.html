@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="favicon.png" />
+	<link rel="icon" type="image/png" href="https://tnwcollective.github.io/assets/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="theme-color" content="#5f00c4">
 	
@@ -35,6 +35,9 @@
 			darkMod.type = "text/css";
 			darkMod.rel = "stylesheet";
 			darkMod.href = "dark.css";
+
+			if (sessionStorage.getItem("dark") == "true") {
+				dark(true); }
 		}
 
 		function toggleMenu() {
@@ -50,10 +53,12 @@
 				root.appendChild(darkMod);
 				title.src = "assets/title-dark.svg";
 				darkButton.src = "assets/moon-dark.svg";
+				sessionStorage.setItem("dark", "true");
 			} else {
 				root.removeChild(darkMod);
 				title.src = "assets/title.svg";
 				darkButton.src = "assets/moon.svg";
+				sessionStorage.setItem("dark", "false");
 			}
 		}
 
@@ -85,7 +90,6 @@
 				</div>
 			</div>
 			<div class="content">
-				
 				<!--Dark Mode-->
 				<h2>Dark Mode</h2>
 				<p>This is some <a href="#">content</a>!</p>

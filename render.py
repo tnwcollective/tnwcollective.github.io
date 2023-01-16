@@ -4,6 +4,7 @@
 
 import json
 import os
+import pathlib
 import re
 import sys
 
@@ -88,7 +89,9 @@ check_env()
 # Make the URL your local path for testing
 if len(sys.argv) == 2 and sys.argv[1] == "-l":
     print("(I'm building locally...)")
-    URL = __file__.replace("\\", "/")
+    abs_path = "file:///" + os.path.abspath(os.getcwd())
+    abs_path = abs_path.replace("/mnt/d/", "D:/")
+    URL = abs_path.replace("\\", "/")
 
 list_file = open("files.json", "r")
 list_data = json.load(list_file)
