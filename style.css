@@ -71,6 +71,10 @@ p {
     margin-bottom: .5em;
 }
 
+strong {
+    text-transform: uppercase;
+}
+
 ul {
     margin-bottom: 2em;
 }
@@ -83,6 +87,10 @@ ul {
 
     margin-bottom: 20px;
     max-width: 100%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container {
@@ -157,6 +165,13 @@ ul {
     color: #FFF !important;
 }
 
+.e-serious {
+    margin-bottom: 20px;
+    border: none;
+    background: #5f00c4;
+    color: white;
+}
+
 .sep {
     background: #222;
     height: 1px;
@@ -211,7 +226,7 @@ ul {
         padding-right: 0;
     }
 
-    .title {
+    #title {
         margin-bottom: 30px;
         width: 60%;
     }

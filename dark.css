@@ -33,6 +33,19 @@ body {
     border-top: 1px solid #d7c7ff;
 }
 
+.e-serious {
+    background: #d7c7ff;
+    border: none;
+}
+
+.e-serious>p>a {
+    color: #5f00c4 !important;
+}
+
+.e-serious>p {
+    color: #333332;
+}
+
 .sidebar {
     border-right: 1px solid #d7c7ff;
 }
