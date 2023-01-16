@@ -100,6 +100,11 @@ ul {
     width: 800px;
 }
 
+.content>ul>li {
+    list-style-type: disc;
+    margin-left: 2em;
+}
+
 #dark-button {
     cursor: pointer;
     float: right;
